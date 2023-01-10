@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 node:16.14.0
 
-RUN yarn global add pm2 && pm2 update
+RUN npm install -g add pm2 && pm2 update
 
 USER node
 
@@ -10,9 +10,10 @@ WORKDIR /home/node/app
 
 COPY package.json .
 COPY package-lock.json .
-RUN npm install
 
 COPY --chown=node:node . .
+
+RUN npm install
 
 RUN npm run build
 

@@ -13,7 +13,7 @@ services:
       - mongo
     ports:
       - '3000:3000'
-    environment:
+      # environment:
       # - AWS_REGION
       # - AWS_ACCESS_KEY_ID
       # - AWS_SECRET_ACCESS_KEY

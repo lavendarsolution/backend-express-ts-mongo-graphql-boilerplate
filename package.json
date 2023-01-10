@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node build/index.js",
     "start:dev": "nodemon src/index.ts",
-    "build": "tsc --project",
+    "build": "tsc --project .",
     "docker:local": "docker-compose up --build backend",
-    "docker:build": "docker built . -t backend",
-    "docker:run": "docker run -p 3000:80 -d backend"
+    "docker:build": "docker build . -t backend-boilerplate",
+    "docker:run": "docker run -p 3000:80 -d backend-boilerplate"
   },
   "repository": {
     "type": "git",
