@@ -13,4 +13,4 @@ npm run docker:local
 
 ### Run development server
 
-npm run start:dev
+env-cmd npm run start:dev
