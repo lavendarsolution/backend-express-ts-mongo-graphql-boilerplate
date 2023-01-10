@@ -1,2 +1,16 @@
-# backend-express-ts-mongo-graphql-boilerplate
-backend-express-ts-mongo-graphql-boilerplate
+# Backend Express/TypeScript Boilerplate with Mongoose, GraphQL
+
+## Description
+
+Backend boilerplate project with Mongoose, GraphQL, Express/TypeScript
+Built with Express, Node, TypeScript, Mongoose, GraphQL/Apollo.
+
+## Set up local development
+
+### Build Docker
+
+npm run docker:local
+
+### Run development server
+
+npm run start:dev
