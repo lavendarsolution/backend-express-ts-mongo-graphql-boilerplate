@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+  backend:
+    image: 'backend:latest'
+    build: .
+    container_name: backend
+    hostname: backend
+    domainname: services.local
+    command: [ "npm", "run", "start:dev" ]
+    env_file: .env
+    depends_on:
+      - redis
+      - mongo
+    ports:
+      - '3000:3000'
+    environment:
+      # - AWS_REGION
+      # - AWS_ACCESS_KEY_ID
+      # - AWS_SECRET_ACCESS_KEY
+      # - AWS_SESSION_TOKEN
+    volumes:
+      - ./src:/home/node/app/src
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    hostname: redis
+    domainname: services.local
+    restart: always
+    ports:
+      - '6379:6379'
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    hostname: mongo
+    domainname: services.local
+    restart: always
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+
+networks:
+  default:
+    name: local
+    external: true

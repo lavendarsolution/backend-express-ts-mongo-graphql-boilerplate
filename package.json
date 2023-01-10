@@ -7,7 +7,9 @@
     "start": "node build/index.js",
     "start:dev": "nodemon src/index.ts",
     "build": "tsc --project",
-    "docker:compose": "docker-compose up --build backend"
+    "docker:local": "docker-compose up --build backend",
+    "docker:build": "docker built . -t backend",
+    "docker:run": "docker run -p 3000:80 -d backend"
   },
   "repository": {
     "type": "git",
